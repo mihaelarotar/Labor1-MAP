@@ -1,47 +1,56 @@
 package lab1;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
 public class Uni {
 
 
-    public List<Integer> failingGrade(List<Integer> grades) {
-        List<Integer> failingGrades = new ArrayList<>();
+    public int[] failingGrade(int[] grades) {
+        int[] failingGrades = new int[100];
+        int index = 0;
         for (int grade : grades) {
-            if (grade < 40)
-                failingGrades.add(grade);
+            if (grade < 40) {
+                failingGrades[index] = grade;
+                index++;
+            }
         }
         return failingGrades;
+
     }
 
-    public double averageGrade(List<Integer> grades) {
-        int sum = 0;
-        for(int grade : grades) {
+    public double averageGrade(int[] grades) {
+        int sum = 0, count = 0;
+        for (int grade : grades) {
             sum += grade;
+            count++;
         }
-        return (double) sum / grades.size();
+        return (double) sum / count;
     }
 
     public double nextMultiple(double nr) {
         return Math.ceil(nr / 5) * 5;
     }
 
-    public List<Integer> roundedGrade(List<Integer> grades) {
-        List<Integer> roundedGrades = new ArrayList<>();
+    public int[] roundedGrade(int[] grades) {
+        int[] roundedGrades = new int[100];
+        int index = 0;
         for (int grade : grades) {
             if ((nextMultiple(grade) - grade) < 3 && grade >= 38)
-                roundedGrades.add((int)nextMultiple(grade));
+                roundedGrades[index] = (int) nextMultiple(grade);
+
             else
-                roundedGrades.add(grade);
+                roundedGrades[index] = grade;
+
+            index++;
         }
         return roundedGrades;
     }
 
-    public int maxGrade(List<Integer> grades) {
-        List<Integer> roundedGrades = roundedGrade(grades);
-        return Collections.max(roundedGrades);
+    public int maxGrade(int[] grades) {
+        int[] roundedGrades = roundedGrade(grades);
+        int max = roundedGrades[0];
+        for (int v : roundedGrades) {
+            if (v > max)
+                max = v;
+        }
+        return max;
     }
 }
