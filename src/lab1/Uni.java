@@ -7,8 +7,6 @@ import java.util.List;
 
 public class Uni {
 
-    /*private int grades[];
-    * +constructor*/
 
     public List<Integer> failingGrade(List<Integer> grades) {
         List<Integer> failingGrades = new ArrayList<>();
