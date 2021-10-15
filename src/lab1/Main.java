@@ -1,7 +1,6 @@
 package lab1;
-import lab1.Uni;
+//import lab1.Uni;
 
-import java.util.Arrays;
 
 public class Main {
 
@@ -50,8 +49,8 @@ public class Main {
         System.out.println();
 
         System.out.println("Aufgabe4:");
-        int[] keyboards = new int[] {40, 35, 75, 50, 20, 45};
-        int[] usb = new int[] {20, 15, 5, 40, 25};
+        int[] keyboards = new int[] {40, 37, 75, 50, 22, 47};
+        int[] usb = new int[] {12, 15, 5, 40, 25};
         Electronics shop = new Electronics(usb, keyboards);
         System.out.println("Cheapest keyboard: " + shop.cheapestKeyboard());
         System.out.println("Most expensive object: " + shop.mostExpensiveObject());

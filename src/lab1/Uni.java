@@ -4,12 +4,12 @@ package lab1;
 public class Uni {
 
     /* checks if the array given as parameter contains integers between 0 and 100
-    * throws exception otherwise*/
+     * throws exception otherwise*/
     public void checkGrades(int[] grades) {
         if (grades.length == 0)
             throw new IllegalArgumentException("Array is empty");
         for (int g : grades)
-            if (g < 0 || g > 100)
+            if (g <= 0 || g > 100)
                 throw new IllegalArgumentException("Grades must be between 0 and 100");
     }
 
@@ -21,8 +21,8 @@ public class Uni {
     }
 
     /*returns a new array, containing the failing grades
-    * pre: an array with the grades
-    * post: a new array with the grades < 40*/
+     * pre: an array with the grades
+     * post: a new array with the grades < 40*/
     public int[] failingGrade(int[] grades) {
         checkGrades(grades);
         int[] failingGrades = new int[grades.length];
@@ -37,8 +37,8 @@ public class Uni {
     }
 
     /*calculates the average grade from the values in the array
-    * pre: an array with the grades
-    * post: a real number representing the average grade*/
+     * pre: an array with the grades
+     * post: a real number representing the average grade*/
     public double averageGrade(int[] grades) {
         checkGrades(grades);
         int sum = 0;
