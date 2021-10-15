@@ -6,8 +6,11 @@ public class Array {
 
     private int[] values;
 
-    /*checks if the array given as parameter contains positive values
-    * throws exception otherwise*/
+    /**
+     * checks if the array given as parameter contains positive values
+     * @exception IllegalArgumentException thrown if values are not positive
+     * @param values an array of numbers
+     */
     public Array(int @NotNull [] values) {
         if(values.length == 0)
             throw new IllegalArgumentException("n cannot be 0");
@@ -17,7 +20,10 @@ public class Array {
         this.values = values;
     }
 
-    /*returns the maximum value in the array*/
+    /**
+     * max value in an array
+     * @return the maximum value in the array
+     */
     public int maxValue() {
         int max = values[0];
         for(int v : values) {
@@ -27,7 +33,10 @@ public class Array {
         return max;
     }
 
-    /*returns the minimum value in the array*/
+    /**
+     * min value in an array
+     * @return returns the minimum value in the array
+     */
     public int minValue() {
         int min = values[0];
         for(int v : values) {
@@ -37,7 +46,10 @@ public class Array {
         return min;
     }
 
-    /*returns the maximum sum of n-1 values (the sum of the values - the minimum value)*/
+    /**
+     * max sum of n-1 values
+     * @return the maximum sum (the sum of the values - the minimum value)
+     */
     public int maxSum() {
         int sum = 0;
         for(int v : values) {
@@ -46,7 +58,10 @@ public class Array {
         return sum - minValue();
     }
 
-    /*returns the minimum sum of n-1 values (the sum of the values - the maximum value)*/
+    /**
+     * min sum of n-1 values
+     * @return the minimum sum (the sum of the values - the maximum value)
+     */
     public int minSum() {
         int sum = 0;
         for(int v : values) {

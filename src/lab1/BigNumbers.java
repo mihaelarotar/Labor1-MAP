@@ -4,8 +4,12 @@ public class BigNumbers {
     private int[] nr1;
     private int[] nr2;
 
-    /*checks if the two arrays have the same number of values and if all the values are digits
-    * throws exception otherwise*/
+    /**
+     * checks if the two arrays have the same number of values and if all the values are digits
+     * @exception IllegalArgumentException thrown otherwise
+     * @param nr1 an array of digits, representing a number
+     * @param nr2 an array of digits, representing a number
+     */
     public BigNumbers(int[] nr1, int[] nr2) {
         if (nr1.length != nr2.length)
             throw new IllegalArgumentException("The numbers must have the same numbers of digits");
@@ -28,7 +32,10 @@ public class BigNumbers {
             }
     }
 
-    /*prints the values in the array given as parameter, separated by whitespaces*/
+    /**
+     * prints the values in the array given as parameter, separated by whitespaces
+     * @param array an array of digits
+     */
     public void printArray(int[] array) {
         if (array[0] != 0) {
             System.out.print(array[0]);
@@ -41,9 +48,10 @@ public class BigNumbers {
         System.out.println();
     }
 
-    /*calculates the sum of the two numbers
-    * pre: two numbers represented on arrays
-    * post: a new array, representing the sum of the two numbers*/
+    /**
+     * calculates the sum of the two numbers nr1 and nr2
+     * @return a new array, representing the sum of the two numbers
+     */
     public int[] sum() {
         int[] sum = new int[nr1.length + 1];
         int carry = 0;
@@ -59,9 +67,11 @@ public class BigNumbers {
         return sum;
     }
 
-    /*calculates the difference of the two numbers
-     * pre: two numbers represented on arrays
-     * post: a new array, representing the sum of the two numbers*/
+
+    /**
+     * calculates the difference of the two numbers nr1 and nr2
+     * @return a new array, representing the sum of the two numbers
+     */
     public int[] dif() {
         int[] dif = new int[nr1.length];
         int borrow = 0;
@@ -80,9 +90,11 @@ public class BigNumbers {
         return dif;
     }
 
-    /*calculates the multiplication of nr1 with a digit
-     * pre: a digit given as parameter and a number represented on an array
-     * post: a new array, representing the product of the number and the digit*/
+    /**
+     * calculates the multiplication of nr1 with a digit
+     * @param digit a digit given as parameter
+     * @return a new array, representing the product of the number and the digit
+     */
     public int[] mul(int digit) {
         if (digit < 0 || digit > 9)
             throw new IllegalArgumentException("Must multiply with a digit");
@@ -100,9 +112,11 @@ public class BigNumbers {
         return mul;
     }
 
-    /*calculates the divison of nr1 by a given digit
-     * pre: a digit given as parameter and a number represented on an array
-     * post: a new array, representing the division of the number by the digit*/
+    /**
+     * calculates the division of nr1 by a given digit
+     * @param digit a digit given as parameter
+     * @return a new array, representing the division of the number by the digit
+     */
     public int[] div(int digit) {
         if (digit < 0 || digit > 9)
             throw new IllegalArgumentException("Must divide by a digit");
